@@ -1,9 +1,28 @@
-:root {
-  --font-display:
-    Spline Sans, Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol, Noto Color Emoji;
-  --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  --font-rounded: 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif;
-  --font-serif: Georgia, 'Times New Roman', serif;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css";
+
+@import "nativewind/theme";
+
+/* Hogara palette: petroleum blue (brand) + amber (action). Contrast AA on white checked for brand-700 text and white on brand-600. */
+@theme {
+  --color-brand-50: #eef7f9;
+  --color-brand-100: #d5ebf0;
+  --color-brand-200: #a9d5e0;
+  --color-brand-500: #1a7a90;
+  --color-brand-600: #0f5c6e;
+  --color-brand-700: #0b4756;
+  --color-brand-800: #08343f;
+  --color-brand-900: #052229;
+  --color-amber-300: #f7c873;
+  --color-amber-400: #f2a93b;
+  --color-amber-500: #d98d1c;
+  --color-ink: #13232a;
+  --color-muted: #5a6b72;
+  --color-line: #dbe3e6;
+  --color-canvas: #f6f8f9;
+  --color-night: #0e1a1f;
+  --color-night-card: #16262d;
+  --color-night-line: #26383f;
+  --color-success: #11795a;
 }

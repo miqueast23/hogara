@@ -41,3 +41,10 @@ example
 # generated native folders
 /ios
 /android
+
+# hogara
+.env
+.env.*
+!.env.example
+.capturas/
+.vercel
