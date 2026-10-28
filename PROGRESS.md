@@ -21,7 +21,8 @@
 - Supabase: proyecto, migración con todas las tablas + RLS por rol, trigger de perfil, semilla en BD.
 - Auth (registro/ingreso, rol comprador/agente; admin solo por SQL) y navegación por rol.
 - Header: "Publica tu propiedad", "Inicia sesión", "Regístrate" (entran con auth).
-- Despliegue a Vercel (tras `pre-lanzamiento` y el "sube" de Óscar).
+- ~~Despliegue a Vercel~~ → hecho 2026-10-28: https://hogara.vercel.app (cabeceras en `vercel.json`).
+  Al conectar Supabase: añadir su URL a `connect-src` de la CSP.
 
 ### Adelantado de Fase 2 (falta)
 - Mapa con pines de precio, favoritos, vistos, comparar, detalle completo (historial, IA, trust, chat, visita).
