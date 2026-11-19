@@ -1,56 +1,52 @@
-# Welcome to your Expo app 👋
+# Hogara 🏠
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Real estate app for Venezuela (starting with Caracas) to buy, rent and sell property with confidence.**
 
-## Get started
+Hogara borrows the search patterns people already know from big booking platforms, but with its own identity and four things the local market is missing:
 
-1. Install dependencies
+1. **Verified users and listings.** Users go through identity checks (KYC), and property documents are reviewed by a moderator.
+2. **Escrow.** Booking and deposit money is held until each step of the deal is met.
+3. **Guided legal help.** An AI legal assistant explains the process and a licensed lawyer validates it.
+4. **AI tools for agents.** Automated social media publishing and a CRM with built-in prompts.
 
-   ```bash
-   npm install
-   ```
+> 🚧 Work in progress. Phase 1 (buyer search experience) is partly done. See [PROGRESS.md](PROGRESS.md).
 
-2. Start the app
+## Features so far
+- Home with Buy / Rent / Sell tabs, search by area, type, bedrooms and budget
+- Results page with live-count filters (verified, 360° tour, rating, area, type), 5 sort options and shareable filter URLs
+- Property detail with gallery, rating, price box and escrow and guarantee info
+- Spanish / English (i18n) and USD / Bs currency toggle
+- Light and dark mode
+- Business rules covered by unit tests (Vitest)
 
-   ```bash
-   npx expo start
-   ```
+## Tech stack
+| Layer | Tools |
+|---|---|
+| App | Expo (React Native) · Expo Router · TypeScript (strict) · web support |
+| UI | NativeWind (Tailwind) · light/dark mode |
+| Data | TanStack Query · Zustand |
+| Backend | Supabase (Auth, Postgres, Storage, Realtime, Edge Functions) |
+| AI | Anthropic Claude, called only from Edge Functions |
+| i18n | i18next (es / en) |
+| Deploy | Vercel (Expo web export) |
 
-In the output, you'll find options to open the app in a
+Every external integration (KYC, escrow, maps, exchange rate, AI, messaging) sits behind an interface in `src/services/` with a **mock implementation by default**. Real providers are switched on with environment variables, so no keys live in the code.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+## Run it locally
 ```bash
-npm run reset-project
+npm install
+cp .env.example .env   # optional: mock services work without keys
+npx expo start         # press w for web, a for Android, i for iOS
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Run the tests:
+```bash
+npm test
+```
 
-### Other setup steps
+## Roles
+- **Buyer / tenant**: mobile
+- **Agent** and **admin**: web and mobile
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## License
+MIT. Built by [Miqueas Timothy](https://github.com/miqueast23).
